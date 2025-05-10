@@ -7,7 +7,7 @@ function App() {
   const [notes, setNotes] = useState<string[]>([]);
 
   const fetchNotes = async () => {
-    const res = await axios.get("http://localhost:5000/api/fetchAllTasks");
+    const res = await axios.get("https://kazam-mqtt-backend.onrender.com/api/fetchAllTasks");
     setNotes(res.data.data);
   };
 
