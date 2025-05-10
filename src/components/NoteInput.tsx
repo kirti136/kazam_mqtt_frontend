@@ -1,5 +1,6 @@
 import { useState } from "react";
 import mqtt from "mqtt";
+import { BsPlusCircleFill } from "react-icons/bs";
 
 const client = mqtt.connect("wss://broker.hivemq.com:8884/mqtt");
 
@@ -18,7 +19,7 @@ const NoteInput = ({ onAdded }: Props) => {
   };
 
   return (
-    <div className="flex gap-2">
+    <div className="flex flex-col sm:flex-row gap-2">
       <input
         value={note}
         onChange={(e) => setNote(e.target.value)}
@@ -27,9 +28,10 @@ const NoteInput = ({ onAdded }: Props) => {
       />
       <button
         onClick={handleAdd}
-        className="bg-orange-800 hover:bg-orange-700 text-white px-4 py-2 rounded-md"
+        className="flex items-center justify-center gap-2 bg-amber-800 hover:bg-amber-700 text-white px-4 py-2 rounded-md"
       >
-        Add
+        <BsPlusCircleFill className="text-lg" />
+        <span className="font-bold text-md">Add</span>
       </button>
     </div>
   );
