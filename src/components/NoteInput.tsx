@@ -12,7 +12,7 @@ const NoteInput = ({ onAdded }: Props) => {
 
   const handleAdd = () => {
     if (!note.trim()) return;
-    client.publish("/add", note);
+    client.publish("/add/kirti", note);
     setNote("");
     setTimeout(onAdded, 1000);
   };
